@@ -1,0 +1,762 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x5fb5d7b8, pid=30406, tid=1597494368
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_60-b19) (build 1.7.0_60-b19)
+# Java VM: Java HotSpot(TM) Client VM (24.60-b09 mixed mode linux-arm )
+# Problematic frame:
+# C  [libstdc++.so.6+0x617b8]  std::strstream::str()+0xc
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x60e23400):  JavaThread "Thread-8" [_thread_in_native, id=30464, stack(0x5f32e000,0x5f37e000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x00000008
+
+Registers:
+  r0  = 0x60e11538
+  r1  = 0x609635b0
+  r2  = 0x60e0ddb8
+  r3  = 0x00000000
+  r4  = 0x60e2aa48
+  r5  = 0x60e0ddb8
+  r6  = 0x609635ac
+  r7  = 0x609635b0
+  r8  = 0x00000000
+  r9  = 0x00000001
+  r10 = 0x60e11538
+  fp  = 0x5f37c93c
+  r12 = 0x60e11538
+  sp  = 0x5f37c8f8
+  lr  = 0x5fb5da88
+  pc  = 0x5fb5d7b8
+  cpsr = 0x60000010
+
+Top of Stack: (sp=0x5f37c8f8)
+0x5f37c8f8:   5f37c990 6047500c ffffffff 00000000
+0x5f37c908:   5f37cae4 70365ec0 60e23400 600f7dd0
+0x5f37c918:   60e2aa48 60e0ddb8 60e0ddb8 609635a8
+0x5f37c928:   5f37c990 01e2aa48 5f37c990 6047500c
+0x5f37c938:   5f37c96c 600f36a0 5f37c990 6047500c
+0x5f37c948:   60e0ddb8 609635a8 60e0ddb8 60e0ddb8
+0x5f37c958:   609635a8 60e2aa48 609635a8 00000001
+0x5f37c968:   5f37c9a4 600ee828 5f37c994 604ae5d8 
+
+Instructions: (pc=0x5fb5d7b8)
+0x5fb5d798:   e12fff1e e280000c eaff93e3 e280000c
+0x5fb5d7a8:   eaff9312 e280000c eaff92c8 e590300c
+0x5fb5d7b8:   e5932008 e3520000 e580200c 15820004
+0x5fb5d7c8:   e5902004 e5832004 e5912000 e1520000 
+
+Register to memory mapping:
+
+  r0  = 0x60e11538
+0x60e11538 is an unknown value
+
+  r1  = 0x609635b0
+0x609635b0 is an unknown value
+
+  r2  = 0x60e0ddb8
+0x60e0ddb8 is an unknown value
+
+  r3  = 0x00000000
+0x00000000 is an unknown value
+
+  r4  = 0x60e2aa48
+0x60e2aa48 is an unknown value
+
+  r5  = 0x60e0ddb8
+0x60e0ddb8 is an unknown value
+
+  r6  = 0x609635ac
+0x609635ac is an unknown value
+
+  r7  = 0x609635b0
+0x609635b0 is an unknown value
+
+  r8  = 0x00000000
+0x00000000 is an unknown value
+
+  r9  = 0x00000001
+0x00000001 is an unknown value
+
+  r10 = 0x60e11538
+0x60e11538 is an unknown value
+
+  fp  = 0x5f37c93c
+0x5f37c93c is pointing into the stack for thread: 0x60e23400
+
+  r12 = 0x60e11538
+0x60e11538 is an unknown value
+
+  sp  = 0x5f37c8f8
+0x5f37c8f8 is pointing into the stack for thread: 0x60e23400
+
+  lr  = 0x5fb5da88
+0x5fb5da88: _ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_+0xd8 in /usr/lib/arm-linux-gnueabihf/libstdc++.so.6 at 0x5fafc000
+
+  pc  = 0x5fb5d7b8
+0x5fb5d7b8: <offset 0x617b8> in /usr/lib/arm-linux-gnueabihf/libstdc++.so.6 at 0x5fafc000
+
+
+
+Stack: [0x5f32e000,0x5f37e000],  sp=0x5f37c8f8,  free space=314k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libstdc++.so.6+0x617b8]  std::strstream::str()+0xc
+
+[error occurred during error reporting (printing native stack), id 0xb]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.alljoyn.bus.BusAttachment.leaveJoinedSession(I)Lorg/alljoyn/bus/Status;+0
+j  com.keti.tas.alljoyn.AlljoynDevice.LeaveSession()V+11
+j  com.keti.tas.alljoyn.AlljoynDevice.JoinSession()V+227
+j  com.keti.tas.alljoyn.PowertechAlljoynPlug.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x60e1ec00 JavaThread "SIGTERM handler" daemon [_thread_blocked, id=31495, stack(0x5ed30000,0x5ed80000)]
+  0x60e0f800 JavaThread "Thread-4" [_thread_in_native, id=31493, stack(0x5eec0000,0x5ef10000)]
+  0x60e28c00 JavaThread "SIGTERM handler" daemon [_thread_blocked, id=31492, stack(0x5ee70000,0x5eec0000)]
+  0x60e29800 JavaThread "MQTT Call: pi.1501141210920" [_thread_blocked, id=31476, stack(0x5edd0000,0x5ee20000)]
+  0x60e29400 JavaThread "MQTT Snd: pi.1501141210920" [_thread_blocked, id=31475, stack(0x5ed80000,0x5edd0000)]
+  0x60e09000 JavaThread "MQTT Rec: pi.1501141210920" [_thread_in_native, id=31474, stack(0x5ee20000,0x5ee70000)]
+  0x76208c00 JavaThread "DestroyJavaVM" [_thread_blocked, id=30407, stack(0x76372000,0x763c2000)]
+=>0x60e23400 JavaThread "Thread-8" [_thread_in_native, id=30464, stack(0x5f32e000,0x5f37e000)]
+  0x60e0cc00 JavaThread "Thread-6" [_thread_blocked, id=30459, stack(0x5f3be000,0x5f40e000)]
+  0x60979400 JavaThread "Thread-3" [_thread_blocked, id=30421, stack(0x608b0000,0x60900000)]
+  0x60931800 JavaThread "Timer-0" [_thread_in_native, id=30419, stack(0x60b30000,0x60b80000)]
+  0x76270400 JavaThread "Service Thread" daemon [_thread_blocked, id=30417, stack(0x60d30000,0x60d80000)]
+  0x7626e400 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=30416, stack(0x60d80000,0x60e00000)]
+  0x7626c800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=30415, stack(0x60f27000,0x60f77000)]
+  0x7625d000 JavaThread "Finalizer" daemon [_thread_blocked, id=30414, stack(0x61429000,0x61479000)]
+  0x7625b800 JavaThread "Reference Handler" daemon [_thread_blocked, id=30413, stack(0x61479000,0x614c9000)]
+
+Other Threads:
+  0x76258c00 VMThread [stack: 0x614c9000,0x61549000] [id=30412]
+  0x7627a800 WatcherThread [stack: 0x60b80000,0x60c00000] [id=30418]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4480K, used 1434K [0x61800000, 0x61cc0000, 0x66540000)
+  eden space 4096K,  33% used [0x61800000, 0x61959ca8, 0x61c00000)
+  from space 384K,  13% used [0x61c60000, 0x61c6cd68, 0x61cc0000)
+  to   space 384K,   0% used [0x61c00000, 0x61c00000, 0x61c60000)
+ tenured generation   total 9984K, used 4177K [0x66540000, 0x66f00000, 0x70000000)
+   the space 9984K,  41% used [0x66540000, 0x66954768, 0x66954800, 0x66f00000)
+ compacting perm gen  total 12288K, used 7345K [0x70000000, 0x70c00000, 0x74000000)
+   the space 12288K,  59% used [0x70000000, 0x7072c4e8, 0x7072c600, 0x70c00000)
+No shared spaces configured.
+
+Card table byte_map: [0x74047000,0x740dc000] byte_map_base: 0x73d3b000
+
+Polling page: 0x76f32000
+
+Code Cache  [0x7415c000, 0x742c4000, 0x7615c000)
+ total_blobs=695 nmethods=538 adapters=93 free_code_cache=31355Kb largest_free_block=32107776
+
+Compilation events (10 events):
+Event: 70.041 Thread 0x7626e400  539  s          java.io.DataOutputStream::write (16 bytes)
+Event: 70.042 Thread 0x7626e400 nmethod 539 0x742bb008 code [0x742bb100, 0x742bb3c4]
+Event: 91.747 Thread 0x7626e400  540             java.util.regex.Matcher::group (112 bytes)
+Event: 91.750 Thread 0x7626e400 nmethod 540 0x742bb488 code [0x742bb5e0, 0x742bb9cc]
+Event: 91.751 Thread 0x7626e400  541             java.util.regex.Matcher::groupCount (10 bytes)
+Event: 91.751 Thread 0x7626e400 nmethod 541 0x742bbd08 code [0x742bbde0, 0x742bbe78]
+Event: 130.047 Thread 0x7626e400  542             java.util.Formatter$FormatSpecifier::checkBadFlags (39 bytes)
+Event: 130.048 Thread 0x7626e400 nmethod 542 0x742bbf08 code [0x742bc010, 0x742bc190]
+Event: 143.145 Thread 0x7626e400  543 % !         com.keti.tas.alljoyn.AlljoynProcesser::run @ 85 (201 bytes)
+Event: 143.151 Thread 0x7626e400 nmethod 543% 0x742bc388 code [0x742bc5e0, 0x742bcc08]
+
+GC Heap History (10 events):
+Event: 52.760 GC heap before
+{Heap before GC invocations=20 (full 0):
+ def new generation   total 4480K, used 4199K [0x61800000, 0x61cc0000, 0x66540000)
+  eden space 4096K, 100% used [0x61800000, 0x61c00000, 0x61c00000)
+  from space 384K,  26% used [0x61c00000, 0x61c19c60, 0x61c60000)
+  to   space 384K,   0% used [0x61c60000, 0x61c60000, 0x61cc0000)
+ tenured generation   total 9984K, used 4118K [0x66540000, 0x66f00000, 0x70000000)
+   the space 9984K,  41% used [0x66540000, 0x66945ad8, 0x66945c00, 0x66f00000)
+ compacting perm gen  total 12288K, used 7311K [0x70000000, 0x70c00000, 0x74000000)
+   the space 12288K,  59% used [0x70000000, 0x70723f08, 0x70724000, 0x70c00000)
+No shared spaces configured.
+Event: 52.768 GC heap after
+Heap after GC invocations=21 (full 0):
+ def new generation   total 4480K, used 110K [0x61800000, 0x61cc0000, 0x66540000)
+  eden space 4096K,   0% used [0x61800000, 0x61800000, 0x61c00000)
+  from space 384K,  28% used [0x61c60000, 0x61c7ba80, 0x61cc0000)
+  to   space 384K,   0% used [0x61c00000, 0x61c00000, 0x61c60000)
+ tenured generation   total 9984K, used 4118K [0x66540000, 0x66f00000, 0x70000000)
+   the space 9984K,  41% used [0x66540000, 0x66945ad8, 0x66945c00, 0x66f00000)
+ compacting perm gen  total 12288K, used 7311K [0x70000000, 0x70c00000, 0x74000000)
+   the space 12288K,  59% used [0x70000000, 0x70723f08, 0x70724000, 0x70c00000)
+No shared spaces configured.
+}
+Event: 56.282 GC heap before
+{Heap before GC invocations=21 (full 0):
+ def new generation   total 4480K, used 4206K [0x61800000, 0x61cc0000, 0x66540000)
+  eden space 4096K, 100% used [0x61800000, 0x61c00000, 0x61c00000)
+  from space 384K,  28% used [0x61c60000, 0x61c7ba80, 0x61cc0000)
+  to   space 384K,   0% used [0x61c00000, 0x61c00000, 0x61c60000)
+ tenured generation   total 9984K, used 4118K [0x66540000, 0x66f00000, 0x70000000)
+   the space 9984K,  41% used [0x66540000, 0x66945ad8, 0x66945c00, 0x66f00000)
+ compacting perm gen  total 12288K, used 7311K [0x70000000, 0x70c00000, 0x74000000)
+   the space 12288K,  59% used [0x70000000, 0x70723f08, 0x70724000, 0x70c00000)
+No shared spaces configured.
+Event: 56.287 GC heap after
+Heap after GC invocations=22 (full 0):
+ def new generation   total 4480K, used 115K [0x61800000, 0x61cc0000, 0x66540000)
+  eden space 4096K,   0% used [0x61800000, 0x61800000, 0x61c00000)
+  from space 384K,  30% used [0x61c00000, 0x61c1ce00, 0x61c60000)
+  to   space 384K,   0% used [0x61c60000, 0x61c60000, 0x61cc0000)
+ tenured generation   total 9984K, used 4118K [0x66540000, 0x66f00000, 0x70000000)
+   the space 9984K,  41% used [0x66540000, 0x66945ad8, 0x66945c00, 0x66f00000)
+ compacting perm gen  total 12288K, used 7311K [0x70000000, 0x70c00000, 0x74000000)
+   the space 12288K,  59% used [0x70000000, 0x70723f08, 0x70724000, 0x70c00000)
+No shared spaces configured.
+}
+Event: 60.058 GC heap before
+{Heap before GC invocations=22 (full 0):
+ def new generation   total 4480K, used 4211K [0x61800000, 0x61cc0000, 0x66540000)
+  eden space 4096K, 100% used [0x61800000, 0x61c00000, 0x61c00000)
+  from space 384K,  30% used [0x61c00000, 0x61c1ce00, 0x61c60000)
+  to   space 384K,   0% used [0x61c60000, 0x61c60000, 0x61cc0000)
+ tenured generation   total 9984K, used 4118K [0x66540000, 0x66f00000, 0x70000000)
+   the space 9984K,  41% used [0x66540000, 0x66945ad8, 0x66945c00, 0x66f00000)
+ compacting perm gen  total 12288K, used 7311K [0x70000000, 0x70c00000, 0x74000000)
+   the space 12288K,  59% used [0x70000000, 0x70723f08, 0x70724000, 0x70c00000)
+No shared spaces configured.
+Event: 60.063 GC heap after
+Heap after GC invocations=23 (full 0):
+ def new generation   total 4480K, used 113K [0x61800000, 0x61cc0000, 0x66540000)
+  eden space 4096K,   0% used [0x61800000, 0x61800000, 0x61c00000)
+  from space 384K,  29% used [0x61c60000, 0x61c7c668, 0x61cc0000)
+  to   space 384K,   0% used [0x61c00000, 0x61c00000, 0x61c60000)
+ tenured generation   total 9984K, used 4118K [0x66540000, 0x66f00000, 0x70000000)
+   the space 9984K,  41% used [0x66540000, 0x66945ad8, 0x66945c00, 0x66f00000)
+ compacting perm gen  total 12288K, used 7311K [0x70000000, 0x70c00000, 0x74000000)
+   the space 12288K,  59% used [0x70000000, 0x70723f08, 0x70724000, 0x70c00000)
+No shared spaces configured.
+}
+Event: 62.705 GC heap before
+{Heap before GC invocations=23 (full 0):
+ def new generation   total 4480K, used 4209K [0x61800000, 0x61cc0000, 0x66540000)
+  eden space 4096K, 100% used [0x61800000, 0x61c00000, 0x61c00000)
+  from space 384K,  29% used [0x61c60000, 0x61c7c668, 0x61cc0000)
+  to   space 384K,   0% used [0x61c00000, 0x61c00000, 0x61c60000)
+ tenured generation   total 9984K, used 4118K [0x66540000, 0x66f00000, 0x70000000)
+   the space 9984K,  41% used [0x66540000, 0x66945ad8, 0x66945c00, 0x66f00000)
+ compacting perm gen  total 12288K, used 7311K [0x70000000, 0x70c00000, 0x74000000)
+   the space 12288K,  59% used [0x70000000, 0x70723f08, 0x70724000, 0x70c00000)
+No shared spaces configured.
+Event: 62.713 GC heap after
+Heap after GC invocations=24 (full 0):
+ def new generation   total 4480K, used 51K [0x61800000, 0x61cc0000, 0x66540000)
+  eden space 4096K,   0% used [0x61800000, 0x61800000, 0x61c00000)
+  from space 384K,  13% used [0x61c00000, 0x61c0cc60, 0x61c60000)
+  to   space 384K,   0% used [0x61c60000, 0x61c60000, 0x61cc0000)
+ tenured generation   total 9984K, used 4177K [0x66540000, 0x66f00000, 0x70000000)
+   the space 9984K,  41% used [0x66540000, 0x669546a0, 0x66954800, 0x66f00000)
+ compacting perm gen  total 12288K, used 7311K [0x70000000, 0x70c00000, 0x74000000)
+   the space 12288K,  59% used [0x70000000, 0x70723f08, 0x70724000, 0x70c00000)
+No shared spaces configured.
+}
+Event: 66.682 GC heap before
+{Heap before GC invocations=24 (full 0):
+ def new generation   total 4480K, used 4147K [0x61800000, 0x61cc0000, 0x66540000)
+  eden space 4096K, 100% used [0x61800000, 0x61c00000, 0x61c00000)
+  from space 384K,  13% used [0x61c00000, 0x61c0cc60, 0x61c60000)
+  to   space 384K,   0% used [0x61c60000, 0x61c60000, 0x61cc0000)
+ tenured generation   total 9984K, used 4177K [0x66540000, 0x66f00000, 0x70000000)
+   the space 9984K,  41% used [0x66540000, 0x669546a0, 0x66954800, 0x66f00000)
+ compacting perm gen  total 12288K, used 7311K [0x70000000, 0x70c00000, 0x74000000)
+   the space 12288K,  59% used [0x70000000, 0x70723f08, 0x70724000, 0x70c00000)
+No shared spaces configured.
+Event: 66.689 GC heap after
+Heap after GC invocations=25 (full 0):
+ def new generation   total 4480K, used 51K [0x61800000, 0x61cc0000, 0x66540000)
+  eden space 4096K,   0% used [0x61800000, 0x61800000, 0x61c00000)
+  from space 384K,  13% used [0x61c60000, 0x61c6cd68, 0x61cc0000)
+  to   space 384K,   0% used [0x61c00000, 0x61c00000, 0x61c60000)
+ tenured generation   total 9984K, used 4177K [0x66540000, 0x66f00000, 0x70000000)
+   the space 9984K,  41% used [0x66540000, 0x66954768, 0x66954800, 0x66f00000)
+ compacting perm gen  total 12288K, used 7311K [0x70000000, 0x70c00000, 0x74000000)
+   the space 12288K,  59% used [0x70000000, 0x70723f08, 0x70724000, 0x70c00000)
+No shared spaces configured.
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 128.825 Thread 0x60931800 Threw 0x618cfcf8 at /HUDSON/workspace/7u-2-build-linux-arm-vfp-hflt/jdk7u60/1081/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 130.048 Thread 0x0195b400 Threw 0x618d3ce8 at /HUDSON/workspace/7u-2-build-linux-arm-vfp-hflt/jdk7u60/1081/hotspot/src/share/vm/prims/jvm.cpp:1244
+Event: 130.051 Thread 0x0195a800 Threw 0x618daef0 at /HUDSON/workspace/7u-2-build-linux-arm-vfp-hflt/jdk7u60/1081/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 130.111 Thread 0x01963c00 Threw 0x618e5748 at /HUDSON/workspace/7u-2-build-linux-arm-vfp-hflt/jdk7u60/1081/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 130.115 Thread 0x0195f000 Threw 0x618ec6c0 at /HUDSON/workspace/7u-2-build-linux-arm-vfp-hflt/jdk7u60/1081/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 138.819 Thread 0x60931800 Threw 0x6191d530 at /HUDSON/workspace/7u-2-build-linux-arm-vfp-hflt/jdk7u60/1081/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 148.821 Thread 0x60931800 Threw 0x6191ef28 at /HUDSON/workspace/7u-2-build-linux-arm-vfp-hflt/jdk7u60/1081/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 158.825 Thread 0x60931800 Threw 0x619208c8 at /HUDSON/workspace/7u-2-build-linux-arm-vfp-hflt/jdk7u60/1081/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 168.818 Thread 0x60931800 Threw 0x61955780 at /HUDSON/workspace/7u-2-build-linux-arm-vfp-hflt/jdk7u60/1081/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 178.825 Thread 0x60931800 Threw 0x61957120 at /HUDSON/workspace/7u-2-build-linux-arm-vfp-hflt/jdk7u60/1081/hotspot/src/share/vm/prims/jni.cpp:743
+
+Events (10 events):
+Event: 155.513 loading class 0x60cd71d0
+Event: 155.514 loading class 0x60cd71d0 done
+Event: 155.514 loading class 0x60cd72f8
+Event: 155.514 loading class 0x60cd7328
+Event: 155.515 loading class 0x60cd7328 done
+Event: 155.515 loading class 0x60cd72f8 done
+Event: 155.515 Thread 0x60e0f800 Thread added: 0x60e0f800
+Event: 155.520 Thread 0x60e1ec00 Thread added: 0x60e1ec00
+Event: 155.521 Thread 0x60e1ec00 Thread exited: 0x60e1ec00
+Event: 157.948 Thread 0x60e1ec00 Thread added: 0x60e1ec00
+
+
+Dynamic libraries:
+00008000-00009000 r-xp 00000000 b3:02 152999     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/bin/java
+00010000-00011000 rw-p 00000000 b3:02 152999     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/bin/java
+01958000-01979000 rw-p 00000000 00:00 0          [heap]
+5ec00000-5ec29000 rw-p 00000000 00:00 0 
+5ec29000-5ed00000 ---p 00000000 00:00 0 
+5ed08000-5ed30000 rw-p 00000000 00:00 0 
+5ed30000-5ed33000 ---p 00000000 00:00 0 
+5ed33000-5ed80000 rwxp 00000000 00:00 0 
+5ed80000-5ed83000 ---p 00000000 00:00 0 
+5ed83000-5edd0000 rwxp 00000000 00:00 0 
+5edd0000-5edd3000 ---p 00000000 00:00 0 
+5edd3000-5ee20000 rwxp 00000000 00:00 0 
+5ee20000-5ee23000 ---p 00000000 00:00 0 
+5ee23000-5ee70000 rwxp 00000000 00:00 0 
+5ee70000-5ee73000 ---p 00000000 00:00 0 
+5ee73000-5eec0000 rwxp 00000000 00:00 0 
+5eec0000-5eec3000 ---p 00000000 00:00 0 
+5eec3000-5ef10000 rwxp 00000000 00:00 0 
+5ef10000-5ef13000 ---p 00000000 00:00 0 
+5ef13000-5ef60000 rwxp 00000000 00:00 0 
+5ef60000-5ef63000 ---p 00000000 00:00 0 
+5ef63000-5efb0000 rwxp 00000000 00:00 0 
+5efb0000-5efb3000 ---p 00000000 00:00 0 
+5efb3000-5f000000 rwxp 00000000 00:00 0 
+5f000000-5f02d000 rw-p 00000000 00:00 0 
+5f02d000-5f100000 ---p 00000000 00:00 0 
+5f11f000-5f122000 ---p 00000000 00:00 0 
+5f122000-5f16f000 rwxp 00000000 00:00 0 
+5f16f000-5f19e000 r-xp 00000000 b3:02 152915     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libsunec.so
+5f19e000-5f1a6000 ---p 0002f000 b3:02 152915     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libsunec.so
+5f1a6000-5f1a9000 rw-p 0002f000 b3:02 152915     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libsunec.so
+5f1a9000-5f1ae000 rw-p 00000000 00:00 0 
+5f1ae000-5f1af000 ---p 00000000 00:00 0 
+5f1af000-5f1ee000 rwxp 00000000 00:00 0 
+5f1ee000-5f1ef000 ---p 00000000 00:00 0 
+5f1ef000-5f22e000 rwxp 00000000 00:00 0 
+5f22e000-5f22f000 ---p 00000000 00:00 0 
+5f22f000-5f26e000 rwxp 00000000 00:00 0 
+5f26e000-5f26f000 ---p 00000000 00:00 0 
+5f26f000-5f2ae000 rwxp 00000000 00:00 0 
+5f2ae000-5f2af000 ---p 00000000 00:00 0 
+5f2af000-5f2ee000 rwxp 00000000 00:00 0 
+5f2ee000-5f2f1000 ---p 00000000 00:00 0 
+5f2f1000-5f32e000 rwxp 00000000 00:00 0 
+5f32e000-5f331000 ---p 00000000 00:00 0 
+5f331000-5f37e000 rwxp 00000000 00:00 0 
+5f37e000-5f37f000 ---p 00000000 00:00 0 
+5f37f000-5f3be000 rwxp 00000000 00:00 0 
+5f3be000-5f3c1000 ---p 00000000 00:00 0 
+5f3c1000-5f40e000 rwxp 00000000 00:00 0 
+5f40e000-5f411000 ---p 00000000 00:00 0 
+5f411000-5f44e000 rwxp 00000000 00:00 0 
+5f44e000-5f451000 ---p 00000000 00:00 0 
+5f451000-5f48e000 rwxp 00000000 00:00 0 
+5f48e000-5f48f000 ---p 00000000 00:00 0 
+5f48f000-5f4ce000 rwxp 00000000 00:00 0 
+5f4ce000-5f4cf000 ---p 00000000 00:00 0 
+5f4cf000-5f50e000 rwxp 00000000 00:00 0 
+5f50e000-5f50f000 ---p 00000000 00:00 0 
+5f50f000-5f54e000 rwxp 00000000 00:00 0 
+5f54e000-5f54f000 ---p 00000000 00:00 0 
+5f54f000-5f58e000 rwxp 00000000 00:00 0 
+5f58e000-5f58f000 ---p 00000000 00:00 0 
+5f58f000-5f5ce000 rwxp 00000000 00:00 0 
+5f5ce000-5f5cf000 ---p 00000000 00:00 0 
+5f5cf000-5f60e000 rwxp 00000000 00:00 0 
+5f60e000-5f60f000 ---p 00000000 00:00 0 
+5f60f000-5f64e000 rwxp 00000000 00:00 0 
+5f64e000-5f64f000 ---p 00000000 00:00 0 
+5f64f000-5f68e000 rwxp 00000000 00:00 0 
+5f68e000-5f68f000 ---p 00000000 00:00 0 
+5f68f000-5f6ce000 rwxp 00000000 00:00 0 
+5f6ce000-5f6cf000 ---p 00000000 00:00 0 
+5f6cf000-5f70e000 rwxp 00000000 00:00 0 
+5f70e000-5f70f000 ---p 00000000 00:00 0 
+5f70f000-5f74e000 rwxp 00000000 00:00 0 
+5f74e000-5f74f000 ---p 00000000 00:00 0 
+5f74f000-5f78e000 rwxp 00000000 00:00 0 
+5f78e000-5f78f000 ---p 00000000 00:00 0 
+5f78f000-5f7ce000 rwxp 00000000 00:00 0 
+5f7ce000-5f7cf000 ---p 00000000 00:00 0 
+5f7cf000-5f80e000 rwxp 00000000 00:00 0 
+5f80e000-5f80f000 ---p 00000000 00:00 0 
+5f80f000-5f84e000 rwxp 00000000 00:00 0 
+5f84e000-5f84f000 ---p 00000000 00:00 0 
+5f84f000-5f88e000 rwxp 00000000 00:00 0 
+5f88e000-5f891000 ---p 00000000 00:00 0 
+5f891000-5f8ce000 rwxp 00000000 00:00 0 
+5f8ce000-5f8cf000 ---p 00000000 00:00 0 
+5f8cf000-5f90e000 rwxp 00000000 00:00 0 
+5f90e000-5f90f000 ---p 00000000 00:00 0 
+5f90f000-5f94e000 rwxp 00000000 00:00 0 
+5f94e000-5f94f000 ---p 00000000 00:00 0 
+5f94f000-5f98e000 rwxp 00000000 00:00 0 
+5f98e000-5fad3000 r-xp 00000000 b3:02 128677     /usr/lib/arm-linux-gnueabihf/libcrypto.so.1.0.0
+5fad3000-5fae3000 ---p 00145000 b3:02 128677     /usr/lib/arm-linux-gnueabihf/libcrypto.so.1.0.0
+5fae3000-5faf0000 r--p 00145000 b3:02 128677     /usr/lib/arm-linux-gnueabihf/libcrypto.so.1.0.0
+5faf0000-5faf8000 rw-p 00152000 b3:02 128677     /usr/lib/arm-linux-gnueabihf/libcrypto.so.1.0.0
+5faf8000-5fafc000 rw-p 00000000 00:00 0 
+5fafc000-5fbbd000 r-xp 00000000 b3:02 138953     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.20
+5fbbd000-5fbcc000 ---p 000c1000 b3:02 138953     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.20
+5fbcc000-5fbd0000 r--p 000c0000 b3:02 138953     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.20
+5fbd0000-5fbd2000 rw-p 000c4000 b3:02 138953     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.20
+5fbd2000-5fbd8000 rw-p 00000000 00:00 0 
+5fbd8000-604d6000 r-xp 00000000 b3:02 255324     /home/pi/WORKING_DIRECTORY/alljoyn/core/alljoyn/alljoyn_java/bin/libs/liballjoyn_java.so
+604d6000-604e5000 ---p 008fe000 b3:02 255324     /home/pi/WORKING_DIRECTORY/alljoyn/core/alljoyn/alljoyn_java/bin/libs/liballjoyn_java.so
+604e5000-60500000 rw-p 008fd000 b3:02 255324     /home/pi/WORKING_DIRECTORY/alljoyn/core/alljoyn/alljoyn_java/bin/libs/liballjoyn_java.so
+60500000-605fe000 rw-p 00000000 00:00 0 
+605fe000-60600000 ---p 00000000 00:00 0 
+60601000-60602000 ---p 00000000 00:00 0 
+60602000-60641000 rwxp 00000000 00:00 0 
+60641000-60644000 ---p 00000000 00:00 0 
+60644000-60681000 rwxp 00000000 00:00 0 
+60681000-606c6000 r-xp 00000000 b3:02 128678     /usr/lib/arm-linux-gnueabihf/libssl.so.1.0.0
+606c6000-606d5000 ---p 00045000 b3:02 128678     /usr/lib/arm-linux-gnueabihf/libssl.so.1.0.0
+606d5000-606d7000 r--p 00044000 b3:02 128678     /usr/lib/arm-linux-gnueabihf/libssl.so.1.0.0
+606d7000-606db000 rw-p 00046000 b3:02 128678     /usr/lib/arm-linux-gnueabihf/libssl.so.1.0.0
+606dc000-606dd000 rw-p 00000000 00:00 0 
+606dd000-606de000 r--p 00000000 b3:02 76180      /usr/share/locale/en_GB/LC_MESSAGES/libc.mo
+606de000-606e7000 r--s 00251000 b3:02 151772     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/resources.jar
+606e7000-606eb000 r--s 0002d000 b3:02 152952     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/ext/sunjce_provider.jar
+606eb000-606ec000 r--s 00003000 b3:02 152950     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/ext/sunec.jar
+606ec000-606ef000 r--s 00037000 b3:02 152951     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/ext/sunpkcs11.jar
+606ef000-608b0000 rw-p 00000000 00:00 0 
+608b0000-608b3000 ---p 00000000 00:00 0 
+608b3000-60900000 rwxp 00000000 00:00 0 
+60900000-60a00000 rw-p 00000000 00:00 0 
+60a00000-60a21000 rw-p 00000000 00:00 0 
+60a21000-60b00000 ---p 00000000 00:00 0 
+60b00000-60b02000 r--s 00019000 b3:02 152959     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/jce.jar
+60b02000-60b07000 r--s 0008a000 b3:02 151714     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/jsse.jar
+60b07000-60b14000 r-xp 00000000 b3:02 152936     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libnio.so
+60b14000-60b1b000 ---p 0000d000 b3:02 152936     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libnio.so
+60b1b000-60b1c000 rw-p 0000c000 b3:02 152936     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libnio.so
+60b1c000-60b21000 r--s 00038000 b3:02 154848     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/xsdlib-20030807.jar
+60b21000-60b30000 r--s 00098000 b3:02 154852     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/msv-20030807.jar
+60b30000-60b33000 ---p 00000000 00:00 0 
+60b33000-60b80000 rwxp 00000000 00:00 0 
+60b80000-60b81000 ---p 00000000 00:00 0 
+60b81000-60c00000 rwxp 00000000 00:00 0 
+60c00000-60cf5000 rw-p 00000000 00:00 0 
+60cf5000-60d00000 ---p 00000000 00:00 0 
+60d00000-60d03000 r--s 00084000 b3:02 152949     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/ext/localedata.jar
+60d03000-60d05000 r--s 00015000 b3:02 154841     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/xpp3-1.1.3.3.jar
+60d05000-60d07000 r--s 0000b000 b3:02 154846     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/pull-parser-2.1.10.jar
+60d07000-60d0c000 r--s 0002f000 b3:02 154655     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/org.eclipse.paho.client.mqttv3-1.1.1.jar
+60d0c000-60d12000 r--s 0007b000 b3:02 156727     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/mqtt-client-0.4.1-20131108.120422-14-javadoc.jar
+60d12000-60d15000 r--s 00021000 b3:02 156725     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/mqtt-client-0.4.1-20131108.120422-14.jar
+60d15000-60d17000 r--s 00024000 b3:02 154847     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/jssc.jar
+60d17000-60d19000 r--s 00005000 b3:02 154850     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/jsr173_1.0_api.jar
+60d19000-60d2a000 r--s 00155000 b3:02 157354     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/jna-platform-4.1.0.jar
+60d2a000-60d30000 r--s 00036000 b3:02 154855     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/jaxen-1.1-beta-6.jar
+60d30000-60d33000 ---p 00000000 00:00 0 
+60d33000-60d80000 rwxp 00000000 00:00 0 
+60d80000-60d83000 ---p 00000000 00:00 0 
+60d83000-60e00000 rwxp 00000000 00:00 0 
+60e00000-60e3e000 rw-p 00000000 00:00 0 
+60e3e000-60f00000 ---p 00000000 00:00 0 
+60f00000-60f01000 r--s 00004000 b3:02 154849     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/relaxngDatatype-20030807.jar
+60f01000-60f05000 r--s 000dc000 b3:02 157048     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/jna-4.1.0.jar
+60f05000-60f18000 r-xp 00000000 b3:02 152928     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libnet.so
+60f18000-60f1f000 ---p 00013000 b3:02 152928     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libnet.so
+60f1f000-60f20000 rw-p 00012000 b3:02 152928     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libnet.so
+60f20000-60f27000 r--s 0003d000 b3:02 154648     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/huesdkresources.jar
+60f27000-60f2a000 ---p 00000000 00:00 0 
+60f2a000-60f77000 rwxp 00000000 00:00 0 
+60f77000-61100000 r--p 00000000 b3:02 599        /usr/lib/locale/locale-archive
+61100000-61121000 rw-p 00000000 00:00 0 
+61121000-61200000 ---p 00000000 00:00 0 
+61200000-61221000 rw-p 00000000 00:00 0 
+61221000-61300000 ---p 00000000 00:00 0 
+61300000-61321000 rw-p 00000000 00:00 0 
+61321000-61400000 ---p 00000000 00:00 0 
+61400000-61401000 r--s 00009000 b3:02 156729     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/org.json-20120521.jar
+61401000-61403000 r--s 00006000 b3:02 154853     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/jaxme-api-0.3.jar
+61403000-61404000 r--s 00014000 b3:02 154489     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/java-json.jar
+61404000-61406000 r--s 00001000 b3:02 152946     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/ext/dnsns.jar
+61406000-6140a000 r--s 0002a000 b3:02 154840     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/huelocalsdk.jar
+6140a000-6140c000 r--s 00009000 b3:02 156743     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/httpmime-4.5.3.jar
+6140c000-6140e000 r--s 00008000 b3:02 157759     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/httpmime-4.3.3.jar
+6140e000-61415000 r--s 00047000 b3:02 157764     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/httpcore-nio-4.3.2.jar
+61415000-6141d000 r--s 00048000 b3:02 156741     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/httpcore-4.4.6.jar
+6141d000-61423000 r--s 0003f000 b3:02 157758     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/httpcore-4.3.2.jar
+61423000-61426000 r--s 00024000 b3:02 156737     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/httpclient-cache-4.5.3.jar
+61426000-61429000 r--s 00022000 b3:02 157757     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/httpclient-cache-4.3.3.jar
+61429000-6142c000 ---p 00000000 00:00 0 
+6142c000-61479000 rwxp 00000000 00:00 0 
+61479000-6147c000 ---p 00000000 00:00 0 
+6147c000-614c9000 rwxp 00000000 00:00 0 
+614c9000-614ca000 ---p 00000000 00:00 0 
+614ca000-61549000 rwxp 00000000 00:00 0 
+61549000-61595000 rw-p 00000000 00:00 0 
+61595000-61757000 r--s 03a68000 b3:02 152897     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/rt.jar
+61757000-617b7000 rw-p 00000000 00:00 0 
+617b7000-61800000 rw-p 00000000 00:00 0 
+61800000-61cc0000 rw-p 00000000 00:00 0 
+61cc0000-66540000 rw-p 00000000 00:00 0 
+66540000-66f00000 rw-p 00000000 00:00 0 
+66f00000-70000000 rw-p 00000000 00:00 0 
+70000000-70c00000 rw-p 00000000 00:00 0 
+70c00000-74000000 rw-p 00000000 00:00 0 
+74000000-74001000 r--s 00007000 b3:02 157763     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/httpcore-ab-4.3.2.jar
+74001000-7400e000 r--s 000aa000 b3:02 156735     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/httpclient-4.5.3.jar
+7400e000-74019000 r--s 00085000 b3:02 157756     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/httpclient-4.3.3.jar
+74019000-7401c000 r--s 00012000 b3:02 156123     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/http-2.2.1.jar
+7401c000-74021000 r--s 0002a000 b3:02 154487     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/gson-2.2.4.jar
+74021000-74026000 r--s 00048000 b3:02 154845     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/dom4j-1.6.1.jar
+74026000-7402d000 rw-p 00000000 00:00 0 
+7402d000-74047000 rw-p 00000000 00:00 0 
+74047000-7404a000 rw-p 00000000 00:00 0 
+7404a000-7406d000 rw-p 00000000 00:00 0 
+7406d000-74073000 rw-p 00000000 00:00 0 
+74073000-740bb000 rw-p 00000000 00:00 0 
+740bb000-740c1000 rw-p 00000000 00:00 0 
+740c1000-740db000 rw-p 00000000 00:00 0 
+740db000-740e2000 rw-p 00000000 00:00 0 
+740e2000-7415c000 rw-p 00000000 00:00 0 
+7415c000-742c4000 rwxp 00000000 00:00 0 
+742c4000-7615c000 rw-p 00000000 00:00 0 
+7615c000-76171000 r-xp 00000000 b3:02 152908     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libzip.so
+76171000-76178000 ---p 00015000 b3:02 152908     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libzip.so
+76178000-76179000 rw-p 00014000 b3:02 152908     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libzip.so
+76179000-76184000 r-xp 00000000 b3:02 14154      /lib/arm-linux-gnueabihf/libnss_files-2.19.so
+76184000-76193000 ---p 0000b000 b3:02 14154      /lib/arm-linux-gnueabihf/libnss_files-2.19.so
+76193000-76194000 r--p 0000a000 b3:02 14154      /lib/arm-linux-gnueabihf/libnss_files-2.19.so
+76194000-76195000 rw-p 0000b000 b3:02 14154      /lib/arm-linux-gnueabihf/libnss_files-2.19.so
+76195000-7619e000 r-xp 00000000 b3:02 14156      /lib/arm-linux-gnueabihf/libnss_nis-2.19.so
+7619e000-761ad000 ---p 00009000 b3:02 14156      /lib/arm-linux-gnueabihf/libnss_nis-2.19.so
+761ad000-761ae000 r--p 00008000 b3:02 14156      /lib/arm-linux-gnueabihf/libnss_nis-2.19.so
+761ae000-761af000 rw-p 00009000 b3:02 14156      /lib/arm-linux-gnueabihf/libnss_nis-2.19.so
+761af000-761c0000 r-xp 00000000 b3:02 14151      /lib/arm-linux-gnueabihf/libnsl-2.19.so
+761c0000-761cf000 ---p 00011000 b3:02 14151      /lib/arm-linux-gnueabihf/libnsl-2.19.so
+761cf000-761d0000 r--p 00010000 b3:02 14151      /lib/arm-linux-gnueabihf/libnsl-2.19.so
+761d0000-761d1000 rw-p 00011000 b3:02 14151      /lib/arm-linux-gnueabihf/libnsl-2.19.so
+761d1000-761d3000 rw-p 00000000 00:00 0 
+761d3000-761f0000 r-xp 00000000 b3:02 2411       /lib/arm-linux-gnueabihf/libgcc_s.so.1
+761f0000-761ff000 ---p 0001d000 b3:02 2411       /lib/arm-linux-gnueabihf/libgcc_s.so.1
+761ff000-76200000 rw-p 0001c000 b3:02 2411       /lib/arm-linux-gnueabihf/libgcc_s.so.1
+76200000-76300000 rw-p 00000000 00:00 0 
+76300000-76302000 r--s 00003000 b3:02 156739     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/httpclient-win-4.5.3.jar
+76302000-76304000 r--s 00006000 b3:02 157755     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/fluent-hc-4.3.3.jar
+76304000-7630b000 r-xp 00000000 b3:02 14152      /lib/arm-linux-gnueabihf/libnss_compat-2.19.so
+7630b000-7631a000 ---p 00007000 b3:02 14152      /lib/arm-linux-gnueabihf/libnss_compat-2.19.so
+7631a000-7631b000 r--p 00006000 b3:02 14152      /lib/arm-linux-gnueabihf/libnss_compat-2.19.so
+7631b000-7631c000 rw-p 00007000 b3:02 14152      /lib/arm-linux-gnueabihf/libnss_compat-2.19.so
+7631c000-7631e000 r--s 0000e000 b3:02 156731     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/commons-logging-1.2.jar
+7631e000-76320000 r--s 0000e000 b3:02 157754     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/commons-logging-1.1.3.jar
+76320000-76327000 r--s 0003a000 b3:02 154844     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/commons-codec-1.9.jar
+76327000-7632d000 r--s 00033000 b3:02 157753     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/commons-codec-1.6.jar
+7632d000-76330000 r--s 0001a000 b3:02 154842     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/alljoyn.jar
+76330000-76352000 r-xp 00000000 b3:02 152938     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libjava.so
+76352000-7635a000 ---p 00022000 b3:02 152938     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libjava.so
+7635a000-7635b000 rw-p 00022000 b3:02 152938     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libjava.so
+7635b000-76361000 r-xp 00000000 b3:02 14160      /lib/arm-linux-gnueabihf/librt-2.19.so
+76361000-76370000 ---p 00006000 b3:02 14160      /lib/arm-linux-gnueabihf/librt-2.19.so
+76370000-76371000 r--p 00005000 b3:02 14160      /lib/arm-linux-gnueabihf/librt-2.19.so
+76371000-76372000 rw-p 00006000 b3:02 14160      /lib/arm-linux-gnueabihf/librt-2.19.so
+76372000-76375000 ---p 00000000 00:00 0 
+76375000-763c2000 rwxp 00000000 00:00 0 
+763c2000-7642b000 r-xp 00000000 b3:02 14149      /lib/arm-linux-gnueabihf/libm-2.19.so
+7642b000-7643b000 ---p 00069000 b3:02 14149      /lib/arm-linux-gnueabihf/libm-2.19.so
+7643b000-7643c000 r--p 00069000 b3:02 14149      /lib/arm-linux-gnueabihf/libm-2.19.so
+7643c000-7643d000 rw-p 0006a000 b3:02 14149      /lib/arm-linux-gnueabihf/libm-2.19.so
+7643d000-768fe000 r-xp 00000000 b3:02 152907     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/client/libjvm.so
+768fe000-76906000 ---p 004c1000 b3:02 152907     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/client/libjvm.so
+76906000-7692b000 rw-p 004c1000 b3:02 152907     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/client/libjvm.so
+7692b000-76d49000 rw-p 00000000 00:00 0 
+76d49000-76e74000 r-xp 00000000 b3:02 13269      /lib/arm-linux-gnueabihf/libc-2.19.so
+76e74000-76e84000 ---p 0012b000 b3:02 13269      /lib/arm-linux-gnueabihf/libc-2.19.so
+76e84000-76e86000 r--p 0012b000 b3:02 13269      /lib/arm-linux-gnueabihf/libc-2.19.so
+76e86000-76e87000 rw-p 0012d000 b3:02 13269      /lib/arm-linux-gnueabihf/libc-2.19.so
+76e87000-76e8a000 rw-p 00000000 00:00 0 
+76e8a000-76e8c000 r-xp 00000000 b3:02 13272      /lib/arm-linux-gnueabihf/libdl-2.19.so
+76e8c000-76e9b000 ---p 00002000 b3:02 13272      /lib/arm-linux-gnueabihf/libdl-2.19.so
+76e9b000-76e9c000 r--p 00001000 b3:02 13272      /lib/arm-linux-gnueabihf/libdl-2.19.so
+76e9c000-76e9d000 rw-p 00002000 b3:02 13272      /lib/arm-linux-gnueabihf/libdl-2.19.so
+76e9d000-76eb0000 r-xp 00000000 b3:02 152942     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/jli/libjli.so
+76eb0000-76eb7000 ---p 00013000 b3:02 152942     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/jli/libjli.so
+76eb7000-76eb8000 rw-p 00012000 b3:02 152942     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/jli/libjli.so
+76eb8000-76ecc000 r-xp 00000000 b3:02 14727      /lib/arm-linux-gnueabihf/libpthread-2.19.so
+76ecc000-76edc000 ---p 00014000 b3:02 14727      /lib/arm-linux-gnueabihf/libpthread-2.19.so
+76edc000-76edd000 r--p 00014000 b3:02 14727      /lib/arm-linux-gnueabihf/libpthread-2.19.so
+76edd000-76ede000 rw-p 00015000 b3:02 14727      /lib/arm-linux-gnueabihf/libpthread-2.19.so
+76ede000-76ee0000 rw-p 00000000 00:00 0 
+76ee0000-76ee2000 r--s 00009000 b3:02 157762     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/commons-cli-1.2.jar
+76ee2000-76eeb000 r-xp 00000000 b3:02 152944     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libverify.so
+76eeb000-76ef3000 ---p 00009000 b3:02 152944     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libverify.so
+76ef3000-76ef4000 rw-p 00009000 b3:02 152944     /usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre/lib/arm/libverify.so
+76ef4000-76ef9000 r-xp 00000000 b3:02 138554     /usr/lib/arm-linux-gnueabihf/libarmmem.so
+76ef9000-76f08000 ---p 00005000 b3:02 138554     /usr/lib/arm-linux-gnueabihf/libarmmem.so
+76f08000-76f09000 rw-p 00004000 b3:02 138554     /usr/lib/arm-linux-gnueabihf/libarmmem.so
+76f09000-76f29000 r-xp 00000000 b3:02 13266      /lib/arm-linux-gnueabihf/ld-2.19.so
+76f29000-76f2a000 r--s 00007000 b3:02 156733     /home/pi/workspace/keti_tas_thyme_alljoyn/libs/fluent-hc-4.5.3.jar
+76f2a000-76f32000 rw-s 00000000 b3:02 15057      /tmp/hsperfdata_pi/30406
+76f32000-76f33000 r--p 00000000 00:00 0 
+76f33000-76f36000 rw-p 00000000 00:00 0 
+76f36000-76f38000 rw-p 00000000 00:00 0 
+76f38000-76f39000 r--p 0001f000 b3:02 13266      /lib/arm-linux-gnueabihf/ld-2.19.so
+76f39000-76f3a000 rw-p 00020000 b3:02 13266      /lib/arm-linux-gnueabihf/ld-2.19.so
+7e7ee000-7e80f000 rwxp 00000000 00:00 0          [stack]
+7e80f000-7e810000 rw-p 00000000 00:00 0 
+7eed3000-7eed4000 r-xp 00000000 00:00 0          [sigpage]
+7eed4000-7eed5000 r--p 00000000 00:00 0          [vvar]
+7eed5000-7eed6000 r-xp 00000000 00:00 0          [vdso]
+ffff0000-ffff1000 r-xp 00000000 00:00 0          [vectors]
+
+VM Arguments:
+jvm_args: -Djava.library.path=/home/pi/WORKING_DIRECTORY/alljoyn/core/alljoyn/alljoyn_java/bin/libs -Dfile.encoding=UTF-8 
+java_command: com.keti.tas.main.MainProcesser
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/bin:/usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/bin:/usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/bin/java/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/bin:/usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/bin/java/bin:/usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/bin:/usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/bin
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x45de14], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x45de14], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x35e81c], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x35e81c], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x35e81c], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x35e81c], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x35ebd8], sa_mask[0]=0x00000004, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x35ed24], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x35ed24], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x35ed24], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x35ed24], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:8.0
+
+uname:Linux 4.4.50-v7+ #970 SMP Mon Feb 20 19:18:29 GMT 2017 armv7l
+libc:glibc 2.19 NPTL 2.19 
+rlimit: STACK 8192k, CORE 0k, NPROC 7336, NOFILE 65536, AS infinity
+load average:0.30 0.16 0.11
+
+/proc/meminfo:
+MemTotal:         947732 kB
+MemFree:           24588 kB
+MemAvailable:     351012 kB
+Buffers:           39552 kB
+Cached:           364496 kB
+SwapCached:          148 kB
+Active:           510792 kB
+Inactive:         357688 kB
+Active(anon):     317480 kB
+Inactive(anon):   194356 kB
+Active(file):     193312 kB
+Inactive(file):   163332 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:        102396 kB
+SwapFree:          99104 kB
+Dirty:               116 kB
+Writeback:             0 kB
+AnonPages:        464296 kB
+Mapped:           233816 kB
+Shmem:             47396 kB
+Slab:              33304 kB
+SReclaimable:      21480 kB
+SUnreclaim:        11824 kB
+KernelStack:        3008 kB
+PageTables:         6612 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      576260 kB
+Committed_AS:    1763180 kB
+VmallocTotal:    1114112 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+CmaTotal:           8192 kB
+CmaFree:            3720 kB
+
+
+CPU:total 4 (ARMv7), vfp
+
+/proc/cpuinfo:
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+Hardware	: BCM2709
+Revision	: a02082
+Serial		: 00000000509e557d
+
+
+Memory: 4k page, physical 947732k(24588k free), swap 102396k(99104k free)
+
+vm_info: Java HotSpot(TM) Client VM (24.60-b09) for linux-arm-vfp-hflt JRE (1.7.0_60-b19), built on May  7 2014 12:58:51 by "java_re" with gcc 4.7.2 20120910 (prerelease)
+
+time: Thu Jul 27 07:43:03 2017
+elapsed time: 182 seconds
+

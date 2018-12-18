@@ -1,0 +1,22 @@
+{
+	"useprotocol": "http",
+	"cse": {
+		"cbhost": "128.134.65.120",
+		"cbport": "7579",
+		"cbname": "Mobius",
+		"cbcseid": "/Mobius",
+		"mqttport": "1883"
+	},
+	"ae": {
+		"aeid": "S",
+		"appid": "0.2.481.1.1",
+		"appname": "kwu-hub",
+		"appport": "9727",
+		"bodytype": "xml",
+		"tasport": "3105"
+	},
+	"cnt": [
+	],
+	"sub": [
+	]
+}
